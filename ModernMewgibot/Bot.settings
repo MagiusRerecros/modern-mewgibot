@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ModernMewgibot" GeneratedClassName="Bot">
+  <Profiles />
+  <Settings>
+    <Setting Name="Username" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Twitch-username</Value>
+    </Setting>
+    <Setting Name="OAuth" Type="System.String" Scope="User">
+      <Value Profile="(Default)">oauth:your-oauth-token</Value>
+    </Setting>
+    <Setting Name="Channel" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Twitch-channel</Value>
+    </Setting>
+    <Setting Name="ClientID" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Twitch-app-id</Value>
+    </Setting>
+    <Setting Name="LinkModEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="PurgeEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SongEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SongFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Not Configured</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

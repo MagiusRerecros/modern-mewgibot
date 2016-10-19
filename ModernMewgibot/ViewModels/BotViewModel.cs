@@ -100,7 +100,7 @@ namespace ModernMewgibot.ViewModels
             client.OnChatCommandReceived += Client_OnChatCommandReceived;
             client.OnMessageReceived += Client_OnMessageReceived;
             client.OnMessageSent += Client_OnMessageSent;
-            client.OnHostingStarted += Client_OnHostingStarted;
+            //client.OnHostingStarted += Client_OnHostingStarted;
             
 
             Task.Factory.StartNew(async () => { ConsoleText = "Connecting...\r\n";  await Task.Delay(5); client.Connect(); });
@@ -211,7 +211,7 @@ namespace ModernMewgibot.ViewModels
             // Verify command exists
             if (command == null)
             {
-                client.SendMessage("Invalid command.");
+                //client.SendMessage("Invalid command.");
                 return;
             }
 
@@ -487,7 +487,7 @@ namespace ModernMewgibot.ViewModels
                     ThankCaster(e.Command);
                     return;
                 }
-                else if (e.Command.Command == "!purge")
+                else if (e.Command.Command == "purge")
                 {
                     PurgeUser(e.Command);
                 }
@@ -521,18 +521,18 @@ namespace ModernMewgibot.ViewModels
             ConsoleText += $"Left { e.Channel }\r\n";
         }
 
-        private async void Client_OnHostingStarted(object sender, TwitchClient.OnHostingStartedArgs e)
-        {
-            ConsoleText += $"HOST INFO - { e.TargetChannel } is being hosted by { e.HostingChannel } for { e.Viewers } viewers.\r\n";
+        //private async void Client_OnHostingStarted(object sender, TwitchClient.OnHostingStartedArgs e)
+        //{
+        //    ConsoleText += $"HOST INFO - { e.TargetChannel } is being hosted by { e.HostingChannel } for { e.Viewers } viewers.\r\n";
 
-            if (e.TargetChannel == client.JoinedChannels[0].Channel)
-            {
-                Caster thanks = new Caster { Username = e.HostingChannel, Channel = $"https://www.twitch.tv/{e.HostingChannel}", Game = await GetGame(e.HostingChannel) };
-                _thankedCasters.Add(thanks);
+        //    if (e.TargetChannel == client.JoinedChannels[0].Channel)
+        //    {
+        //        Caster thanks = new Caster { Username = e.HostingChannel, Channel = $"https://www.twitch.tv/{e.HostingChannel}", Game = await GetGame(e.HostingChannel) };
+        //        _thankedCasters.Add(thanks);
 
-                client.SendMessage($"Follow { thanks.Username } over at { thanks.Channel } ! Last seen playing { thanks.Game }!");
-            }
-        }
+        //        client.SendMessage($"Follow { thanks.Username } over at { thanks.Channel } ! Last seen playing { thanks.Game }!");
+        //    }
+        //}
 
         private void Client_OnChatCleared(object sender, TwitchClient.OnChatClearedArgs e)
         {

@@ -8,23 +8,25 @@ namespace ModernMewgibot.Services
 {
     static class JsonFileService
     {
+        private static string baseDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\MewgiBot\\";
+
         /// <summary>
         /// Ensure all files required for the bot are created
         /// </summary>
         public static void InitializeAllFiles()
         {
-            if (!Directory.Exists(@".\Logs"))
-                Directory.CreateDirectory(@".\Logs");
-            if (!Directory.Exists(@".\Data"))
-                Directory.CreateDirectory(@".\Data");
+            if (!Directory.Exists(baseDirectory + @".\Logs"))
+                Directory.CreateDirectory(baseDirectory + @".\Logs");
+            if (!Directory.Exists(baseDirectory + @".\Data"))
+                Directory.CreateDirectory(baseDirectory + @".\Data");
 
             string date = DateTimeOffset.Now.ToString("MMddyyyy");
-            string logname = @".\Logs\log-" + date + ".txt";
+            string logname = baseDirectory + @".\Logs\log-" + date + ".txt";
 
-            Task.Factory.StartNew(() => InitializeFile(@".\Data\quotes.json"));
-            Task.Factory.StartNew(() => InitializeFile(@".\Data\commands.json"));
-            Task.Factory.StartNew(() => CreateFile(@".\Logs\thanks.json"));
-            Task.Factory.StartNew(() => InitializeFile(@".\Logs\log-" + date + ".txt"));
+            Task.Factory.StartNew(() => InitializeFile(baseDirectory + @".\Data\quotes.json"));
+            Task.Factory.StartNew(() => InitializeFile(baseDirectory + @".\Data\commands.json"));
+            Task.Factory.StartNew(() => CreateFile(baseDirectory + @".\Logs\thanks.json"));
+            Task.Factory.StartNew(() => InitializeFile(logname));
         }
 
         /// <summary>
@@ -57,7 +59,7 @@ namespace ModernMewgibot.Services
         /// <param name="fileNameAndPath">Name and path of file</param>
         public static async Task SaveToFile<T>(T toSave, string fileNameAndPath)
         {
-            await WriteTextAsync(fileNameAndPath, JsonConvert.SerializeObject(toSave, Formatting.Indented));
+            await WriteTextAsync(baseDirectory + fileNameAndPath, JsonConvert.SerializeObject(toSave, Formatting.Indented));
         }
 
         /// <summary>
@@ -84,7 +86,7 @@ namespace ModernMewgibot.Services
         /// <returns>Deserialized object</returns>
         public static async Task<T> LoadFromFile<T>(string fileNameAndPath)
         {
-            string json = await ReadTextAsync(fileNameAndPath);
+            string json = await ReadTextAsync(baseDirectory + fileNameAndPath);
             T toReturn = default(T);
 
             if (!(json == "File not found.") && !(String.IsNullOrEmpty(json)) && !(String.IsNullOrWhiteSpace(json)))

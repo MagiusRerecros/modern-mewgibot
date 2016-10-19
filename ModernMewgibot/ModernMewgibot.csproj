@@ -23,9 +23,16 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <SupportUrl>https://www.twitter.com/MagiusRerecros</SupportUrl>
+    <ErrorReportUrl>https://www.twitter.com/MagiusRerecros</ErrorReportUrl>
+    <TargetCulture>en-US</TargetCulture>
+    <ProductName>MewgiBot</ProductName>
+    <PublisherName>Top Percentage Gaming</PublisherName>
+    <SuiteName>TPG Twitch Utilities</SuiteName>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -47,6 +54,18 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>MegaMew.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>4ADE516932CA22A290EFAAE175395E790DB1246E</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ModernMewgibot_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FirstFloor.ModernUI, Version=1.0.9.0, Culture=neutral, PublicKeyToken=bc9b0c37bf06c6a9, processorArchitecture=MSIL">
@@ -201,6 +220,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Bot.Designer.cs</LastGenOutput>
     </None>
+    <None Include="ModernMewgibot_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="UserInterface.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

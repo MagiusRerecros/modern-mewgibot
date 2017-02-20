@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="ModernMewgibot.Pages.Settings.BotSettings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="500">
+    <Grid Style="{StaticResource ContentRoot}">
+        <ScrollViewer MinWidth="200">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Channel:" Margin="0,0,10,15" />
+                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Margin="0,0,10,15">
+                    <TextBox Text="{Binding Channel, Mode=TwoWay}" Margin="0,0,10,0" MinWidth="250" />
+                    <Button Content="Connect" Command="{Binding ConnectChannelCommand}" />
+                </StackPanel>
+
+                <CheckBox Grid.Row="1" Grid.ColumnSpan="2" Content="Enable !purge Command" IsChecked="{Binding PurgeEnabled, Mode=TwoWay}" Margin="0,0,10,15" />
+
+                <CheckBox Grid.Row="2" Grid.ColumnSpan="2" Content="Purge Hyperlinks" IsChecked="{Binding LinkModEnabled, Mode=TwoWay}" Margin="0,0,10,15" />
+
+                <CheckBox Grid.Row="3" Grid.ColumnSpan="2" Content="Allow Subscribers to post links" IsChecked="{Binding SubsCanLink, Mode=TwoWay}" IsEnabled="{Binding LinkModEnabled}" Margin="0,0,10,15" />
+
+                <CheckBox Grid.Row="4" Grid.ColumnSpan="2" Content="Allow Regulars to post links" IsChecked="{Binding RegularsCanLink, Mode=TwoWay}" IsEnabled="{Binding LinkModEnabled}" Margin="0,0,10,15" />
+
+                <CheckBox Grid.Row="5" Grid.ColumnSpan="2" Content="Enable !song Command" IsChecked="{Binding SongEnabled, Mode=TwoWay}" Margin="0,0,10,15"/>
+
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="Song File:" Margin="0,0,10,15" />
+                <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Vertical" Margin="0,0,10,15">
+                    <TextBlock Text="{Binding SongFile, Mode=OneWay}" Margin="0,0,0,5" />
+                    <Button Content="Open" Width="70" HorizontalAlignment="Left" Command="{Binding OpenFileCommand}" />
+                </StackPanel>
+
+                <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Content="Enable Subscriber Greeting" IsChecked="{Binding SubGreetingEnabled, Mode=TwoWay}" Margin="0,0,10,15"/>
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="Subscriber Greeting:" Margin="0,0,10,15" />
+                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding SubGreeting, Mode=TwoWay}" IsEnabled="{Binding SubGreetingEnabled}" Margin="0,0,10,0" MinWidth="250" Height="25" />
+
+                <!--<CheckBox Grid.Row="9" Grid.ColumnSpan="2" Content="Enable Follower Greeting" IsChecked="{Binding FollowGreetingEnabled, Mode=TwoWay}" Margin="0,0,10,15"/>
+                <TextBlock Grid.Row="10" Grid.Column="0" Text="Follower Greeting:" Margin="0,0,10,15" />
+                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding FollowerGreeting, Mode=TwoWay}" IsEnabled="{Binding FollowGreetingEnabled}" Margin="0,0,10,0" MinWidth="250" Height="25" />-->
+
+                <CheckBox Grid.Row="11" Grid.ColumnSpan="2" Content="Automatically run !caster for hosts" IsChecked="{Binding HostAutoThank, Mode=TwoWay}" Margin="0,0,10,15" />
+
+                <CheckBox Grid.Row="12" Grid.ColumnSpan="2" Content="Enable Quotes" IsChecked="{Binding QuotesEnabled, Mode=TwoWay}" Margin="0,0,10,15" />
+
+                <StackPanel Grid.Row="13" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Margin="0,0,10,15" Content="Backup Settings" Command="{Binding BackupSettingsCommand}" />
+                    <Button Margin="10,0,0,15" Content="Restore Settings" Command="{Binding RestoreSettingsCommand}" />
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

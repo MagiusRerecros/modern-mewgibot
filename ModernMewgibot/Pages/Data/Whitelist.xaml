@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="ModernMewgibot.Pages.Data.Whitelist"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="500">
+    <Grid Style="{StaticResource ContentRoot}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <ScrollViewer Grid.Row="0" Grid.ColumnSpan="2">
+            <DataGrid ItemsSource="{Binding Whitelist}" SelectedItem="{Binding SelectedLink}" />
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Command="{Binding RemoveLinkCommand}" Content="Remove Selected Link" Margin="0,10,0,10" />
+        </StackPanel>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Margin="0,0,10,15" Text="Permitted Users:" />
+        <ListBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding PermittedUsers}" SelectedItem="{Binding SelectedPermit}" ScrollViewer.VerticalScrollBarVisibility="Visible" />
+
+        <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Command="{Binding RemovePermitCommand}" Content="Remove Selected Permit" Margin="0,10,10,10" />
+            <Button Command="{Binding RemoveAllPermitsCommand}" Content="Remove All Permits" Margin="10,10,0,10" />
+        </StackPanel>
+    </Grid>
+</UserControl>

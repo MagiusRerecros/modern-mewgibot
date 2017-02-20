@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="ModernMewgibot.Pages.Events.Trivia"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="500">
+    <Grid Style="{StaticResource ContentRoot}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="0,0,0,15" HorizontalAlignment="Center">
+                <Button Content="Start Trivia" Width="100" Margin="0,0,20,0" Command="{Binding StartTriviaCommand}" IsEnabled="{Binding TriviaInactive, Mode=OneWay}" />
+                <Button Content="Stop Trivia" Width="100" Margin="20,0,20,0" Command="{Binding StopTriviaCommand}" IsEnabled="{Binding TriviaActive, Mode=OneWay}" />
+                <Button Content="Skip Question" Width="120" Margin="20,0,0,0" Command="{Binding SkipQuestionCommand}" IsEnabled="{Binding TriviaActive, Mode=OneWay}" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.ColumnSpan="2" DataContext="{Binding CurrentQuestion}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Current Question:" Width="120" Margin="0,0,0,15" />
+                    <TextBox Text="{Binding Question}" MinWidth="200" Margin="0,0,0,15" IsReadOnly="True" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Current Answer:" Width="120" />
+                    <TextBox Text="{Binding Answer}" MinWidth="200" IsReadOnly="True" />
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

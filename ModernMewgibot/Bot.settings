@@ -1,0 +1,57 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ModernMewgibot" GeneratedClassName="Bot">
+  <Profiles />
+  <Settings>
+    <Setting Name="Username" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="OAuth" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Channel" Type="System.String" Scope="User">
+      <Value Profile="(Default)">test</Value>
+    </Setting>
+    <Setting Name="ClientID" Type="System.String" Scope="User">
+      <Value Profile="(Default)">set-client-id-here</Value>
+    </Setting>
+    <Setting Name="LinkModEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="PurgeEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SongEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SongFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Not Configured</Value>
+    </Setting>
+    <Setting Name="FollowGreetingEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SubGreetingEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="FollowGreeting" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Follower Greeting Goes Here</Value>
+    </Setting>
+    <Setting Name="SubGreeting" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Subscriber Greeting Goes Here</Value>
+    </Setting>
+    <Setting Name="HostAutoThank" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SubsCanLink" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="RegularsCanLink" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="QuotesEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ChannelAccessToken" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="ModernMewgibot.Pages.Events.Raffle3"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="500">
+    <Grid Style="{StaticResource ContentRoot}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Entry Command:" Margin="0,0,10,15" />
+            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding RaffleJoinCommand3}" Margin="0,0,0,15" IsEnabled="{Binding RaffleInactive3, Mode=OneWay}" />
+
+            <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="0,0,0,15" HorizontalAlignment="Center">
+                <CheckBox Content="Entrants Must Be Following" IsChecked="{Binding RaffleFollow3, Mode=TwoWay}" IsEnabled="{Binding RaffleInactive3, Mode=OneWay}" Margin="0,0,20,0" />
+                <CheckBox Content="Entrants Must Be Subbed" IsChecked="{Binding RaffleSub3, Mode=TwoWay}" IsEnabled="{Binding RaffleInactive3, Mode=OneWay}" Margin="20,0,0,0"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="0,0,0,15"  Orientation="Horizontal">
+                <CheckBox Content="Keep Raffle Open" IsChecked="{Binding RaffleKeepOpen3, Mode=TwoWay}" Margin="0,0,20,0" />
+                <Button Content="Reset Entries" IsEnabled="{Binding RaffleKeepOpen3, Mode=OneWay}" Margin="20,0,0,0" Command="{Binding ResetEntriesCommand3}" />
+            </StackPanel>
+
+            <TextBlock Grid.Row="3" Grid.Column="0" Margin="0,0,10,15" Text="Winner Cooldown (In Minutes):" />
+            <DockPanel Grid.Row="3" Grid.Column="1" Margin="0,0,0,15" HorizontalAlignment="Center">
+                <Slider Minimum="0" Maximum="30" Value="{Binding RaffleCooldown3}" MinWidth="200" Margin="0,0,10,0" IsEnabled="{Binding RaffleInactive3, Mode=OneWay}" />
+                <TextBlock Text="{Binding RaffleCooldown3}" Margin="0,0,10,0" DockPanel.Dock="Right" Width="30" TextAlignment="Right" />
+            </DockPanel>
+
+            <StackPanel Grid.Row="4" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="0,0,0,15" HorizontalAlignment="Center">
+                <Button Content="Start Raffle" Width="125" Margin="0,0,20,0" Command="{Binding StartRaffleCommand3}" IsEnabled="{Binding RaffleInactive3, Mode=OneWay}" />
+                <Button Content="Select Winner" Width="125" Command="{Binding SelectWinnerCommand3}" IsEnabled="{Binding RaffleActive3, Mode=OneWay}" />
+                <Button Content="Cancel Raffle" Width="125" Margin="20,0,0,0" Command="{Binding CancelRaffleCommand3}" IsEnabled="{Binding RaffleActive3, Mode=OneWay}" />
+            </StackPanel>
+
+            <TextBlock Grid.Row="5" Grid.Column="0" Margin="0,0,10,15" Text="Current Entries:" />
+            <ListBox Grid.Row="5" Grid.Column="1" ItemsSource="{Binding RaffleEntries3, Mode=OneWay}" ScrollViewer.VerticalScrollBarVisibility="Visible">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Username}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <TextBlock Grid.Row="6" Grid.Column="0" Margin="0,0,10,15" Text="Raffle Winners:" />
+            <ListBox Grid.Row="6" Grid.Column="1" ItemsSource="{Binding RaffleWinners3, Mode=OneWay}" ScrollViewer.VerticalScrollBarVisibility="Visible">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+    </Grid>
+</UserControl>

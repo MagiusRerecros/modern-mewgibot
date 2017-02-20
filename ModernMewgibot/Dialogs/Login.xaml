@@ -1,0 +1,33 @@
+﻿<Window x:Class="ModernMewgibot.Dialogs.Login"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                  xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+                  mc:Ignorable="d" 
+                  d:DesignHeight="200" d:DesignWidth="300"
+                  Title="Log In"
+                  Width="300" Height="200"
+                  ContentRendered="ModernWindow_ContentRendered">
+    <!--LogoData="F1 M 0.93847758 30.749825 c 0 -2.613939 1.46372472 -4.503256 10.54256442 -13.607925 l 10.542564 -10.5725569 -5.850176 0 -5.850177 0 0 5.4672759 c 0 4.61834 -0.3643072 5.809524 -2.3461936 7.67141 l -2.3461939 2.204135 0 -7.671411 c 0 -7.6017554 -0.4500993 -8.7228748 -2.6277372 -6.5452369 C 2.1272159 8.5714285 1.8769552 8.0477874 1.8769552 5.3391308 l 0 -3.4825584 15.9541188 0.06924 15.954119 0.06924 0 6.7918377 c 0 4.031238 -0.457743 7.24958 -1.126173 7.918011 -0.663589 0.663589 -3.852362 1.126173 -7.76316 1.126173 l -6.636987 0 -7.93562 7.977059 c -4.3645908 4.387383 -8.2616801 7.97706 -8.6601977 7.97706 -0.3985178 0 -0.72457772 -1.365916 -0.72457772 -3.035368 z M 29.092805 10.147673 l 0 -2.9910142 -2.815433 2.6973558 c -1.548488 1.4835454 -2.815433 2.8295014 -2.815433 2.9910134 0 0.161512 1.266945 0.293658 2.815433 0.293658 2.539335 0 2.815433 -0.293316 2.815433 -2.991013 z m -18.300313 16.129699 7.463787 -7.50782 7.764457 0 c 7.656435 0 7.764457 0.03264 7.764457 2.346194 0 2.254483 -0.231251 2.346193 -5.916006 2.346193 -5.529093 0 -6.124219 0.214822 -9.099635 3.284672 l -3.18363 3.284672 6.808828 0 c 4.30024 0 6.595133 -0.345766 6.228816 -0.938478 -0.319006 -0.516163 -2.732115 -0.938478 -5.362465 -0.938478 -4.723009 0 -4.761341 -0.02333 -3.083833 -1.876955 1.358632 -1.501271 2.89048 -1.876955 7.653273 -1.876955 l 5.954652 0 0 4.692388 0 4.692388 -15.228244 0 -15.2282437 0 7.4637867 -7.507821 Z">-->
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" VerticalAlignment="Bottom" Margin="10,0" Text="Twitch Username:" />
+        <TextBox Name="txtUsername" Grid.Row="1" Margin="10,0" />
+
+        <TextBlock Grid.Row="2" VerticalAlignment="Bottom" Margin="10,15,10,0" Text="OAuth Token:" />
+        <TextBox Name="txtOAuth" Grid.Row="3" Margin="10,0" />
+
+        <WrapPanel Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <Button IsDefault="True" Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="0,0,10,0" Content="OK" />
+            <Button IsCancel="True" MinWidth="60" Margin="0,0,10,0" Content="Cancel" />
+        </WrapPanel>
+    </Grid>
+</Window>

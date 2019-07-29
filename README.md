@@ -4,6 +4,7 @@ It also makes use of the [jService.io](http://jservice.io) web API, and [SwiftyS
 
 # Getting Started
 To get starting with customizing Modern Mewgibot, do the following:
+
 1. Clone the repo
 2. Restore the NuGet packages
 3. Set the value of defaultUsername and defaultOAuth in BotViewModel.cs to values corresponding to whatever account you would like the bot to use by default.
